@@ -1,0 +1,9 @@
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\bin\Debug\netstandard2.0\Demo_Dall7.deps.json
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\bin\Debug\netstandard2.0\Demo_Dall7.dll
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\bin\Debug\netstandard2.0\Demo_Dall7.pdb
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.csprojAssemblyReference.cache
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.AssemblyInfoInputs.cache
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.AssemblyInfo.cs
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.csproj.CoreCompileInputs.cache
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.dll
+C:\Users\Narges\source\repos\Home7\Demo_Dall7\obj\Debug\netstandard2.0\Demo_Dall7.pdb

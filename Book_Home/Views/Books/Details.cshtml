@@ -1,0 +1,122 @@
+﻿@model Demo_Dall7.Book
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: midnightblue;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+            .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+            .button:hover span:after {
+                opacity: 1;
+                right: 0;
+            }
+</style>
+<h1>Details</h1>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LikeCount)
+        </dt>
+
+        <dd class="col-sm-10">
+         @Html.DisplayFor(model => model.LikeCount)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Abstract)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Abstract)
+        </dd>
+    </dl>
+
+</div>
+<button class="button" onclick="AddLike(@Model.BookId)" style="vertical-align:middle;font-size:24px "><span>like ❤ </span> </button>
+<button class="button" onclick="DisLike(@Model.BookId) " style="vertical-align:middle"><span>dislike 💔 </span></button>
+<br />
+<hr />
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BookId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script>
+   
+    function AddLike(bookId) {
+        var request = new XMLHttpRequest();
+        request.open('post', '@Url.Action("LikeThis")' + '?id=' + bookId);
+      
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && this.status == 200) {
+                document.getElementById('count').value = this.responseText;
+               
+            }
+        }
+
+        request.send();
+    }
+      function DisLike(bookId) {
+        var request = new XMLHttpRequest();
+          request.open('post', '@Url.Action("UnlikeThis")' + '?id=' + bookId);
+
+          request.onreadystatechange = function () {
+            if (request.readyState == 4 && this.status == 200) {
+             
+                if (request.response == 0) {
+                    document.getElementById(bookId).innerHTML = "❤ ";
+                }
+                else {
+                   
+                    document.getElementById(bookId).innerHTML = "💔";
+                   
+                }
+            }
+        }
+
+        request.send();
+    }
+</script>
+
+
